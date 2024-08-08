@@ -1,0 +1,6 @@
+export { Tela1 as Tela1 } from './Tela1'
+export { Tela2 as Tela2 } from './Tela2'
+export { Tela3 as Tela3 } from './Tela3'
+export { Tela4 as Tela4 } from './Tela4'
+export { Login as Login } from './Login'
+export { Cadastrar as Cadastrar} from './Cadastrar'
