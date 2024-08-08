@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, KeyboardAvoidingView, TextInput, Alert } from "react-native";
 import { FundoLog } from '../../components/fundoLogin';
-import { Zocial, Fontisto } from '@expo/vector-icons';
+import { Zocial, Fontisto, FontAwesome6 } from '@expo/vector-icons';
 import { styles } from "./styles";
 import { Scontainer, colors } from '../../styles/globalstyle';
 import { MenuStackTypes } from "../../navigation/Login.navigation";
@@ -29,22 +29,32 @@ export function Cadastrar({ navigation }: MenuStackTypes) {
         setData({ ...data, ...item });
     }
     return (
+        
         <FundoLog>
             <View style={Scontainer.container}>
                 <View style={styles.header}>
                     <Text style={styles.h3}>
-                        Crie sua conta
+                        Crie sua conta {""}
                     </Text>
                     <View style={styles.firula}>
-                        <Image style={styles.titulo} source={require('../../assets/Aquarium.png')} />
-                        <Text>gratuitamente</Text>
-                        <Image style={styles.titulo} source={require('../../assets/Aquarium.png')} />
+                        <Image style={styles.gotas} source={require('../../assets/splashE.png')} />
+                        <Text style={styles.grat}>gratuitamente</Text>
+                        <Image style={styles.gotas} source={require('../../assets/splashD.png')} />
                     </View>
                 </View>
-                <Text style={styles.h3}>
+                <Text style={styles.h4}>
                     Preencha corretamente com suas informações!
                 </Text>
-                <KeyboardAvoidingView>
+                <KeyboardAvoidingView style={styles.kav}>
+                    <View style={styles.formRow}>
+                    <FontAwesome6 name="user-pen" style={styles.icon}/>
+                        <TextInput
+                            placeholderTextColor={colors.roxo}
+                            style={styles.input}
+                            placeholder="Nome"
+                            onChangeText={(i) => handleChange({ name: i })}
+                        />
+                    </View>
                     <View style={styles.formRow}>
                         <Zocial name="email" style={styles.icon} />
                         <TextInput
@@ -67,8 +77,10 @@ export function Cadastrar({ navigation }: MenuStackTypes) {
                             onChangeText={(i) => handleChange({ password: i })}
                         />
                     </View>
-                    <ButtonInterface title='Voltar' type='primary' onPressI={handleGoBack} />
-                    <ButtonInterface title='Entrar' type='secondary' onPressI={handleRegister} />
+                    <View style={styles.bots}>
+                        <ButtonInterface title='Voltar' type='primary' onPressI={handleGoBack} />
+                        <ButtonInterface title='Entrar' type='secondary' onPressI={handleRegister} />
+                    </View>
                 </KeyboardAvoidingView>
                 <View style={styles.txt}>
                     <Text style={styles.log}>Já tem uma conta?</Text>

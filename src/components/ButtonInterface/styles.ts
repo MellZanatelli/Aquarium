@@ -4,15 +4,17 @@ import { colors } from '../../styles/globalstyle'
 export const styles = StyleSheet.create({
 
     buttonPrimary: {
-        backgroundColor: colors.roxo,
+        backgroundColor: colors.white,
         borderRadius: 5,
         margin: 10,
     },
 
     buttonSecondary: {
-        backgroundColor: colors.white,
+        backgroundColor: colors.roxo,
         borderRadius: 5,
         margin: 10,
+        borderColor: colors.white,
+        borderWidth: 2,
     },
 
     buttonThird: {
@@ -21,8 +23,24 @@ export const styles = StyleSheet.create({
         margin: 10,
     },
 
-    text: {
+    textPrimary: {
+        color: colors.roxo,
+        fontWeight: "bold",
+        padding: 10,
+        fontSize: 18,
+        textAlign: "center",
+    },
+
+    textSecondary: {
         color: colors.white,
+        fontWeight: "bold",
+        padding: 10,
+        fontSize: 18,
+        textAlign: "center",
+    },
+
+    textThird: {
+        color: colors.black,
         fontWeight: "bold",
         padding: 10,
         fontSize: 18,

@@ -39,6 +39,19 @@ export function Login({ navigation }: MenuStackTypes) {
     return (
         <FundoLog>
             <View style={Scontainer.container}>
+            <View style={styles.header}>
+                    <Text style={styles.h3}>
+                        Crie sua conta {""}
+                    </Text>
+                    <View style={styles.firula}>
+                        <Image style={styles.gotas} source={require('../../assets/splashE.png')} />
+                        <Text style={styles.grat}>gratuitamente</Text>
+                        <Image style={styles.gotas} source={require('../../assets/splashD.png')} />
+                    </View>
+                </View>
+                <Text style={styles.h4}>
+                    Preencha corretamente com suas informações!
+                </Text>
                 <KeyboardAvoidingView>
                     <View style={styles.formRow}>
                         <Zocial name="email" style={styles.icon} />
