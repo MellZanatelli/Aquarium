@@ -39,20 +39,14 @@ export function Login({ navigation }: MenuStackTypes) {
     return (
         <FundoLog>
             <View style={Scontainer.container}>
-            <View style={styles.header}>
-                    <Text style={styles.h3}>
-                        Crie sua conta {""}
-                    </Text>
+                <View style={styles.header}>
                     <View style={styles.firula}>
                         <Image style={styles.gotas} source={require('../../assets/splashE.png')} />
-                        <Text style={styles.grat}>gratuitamente</Text>
+                        <Text style={styles.bemv}>Bem-vindo de volta!</Text>
                         <Image style={styles.gotas} source={require('../../assets/splashD.png')} />
                     </View>
                 </View>
-                <Text style={styles.h4}>
-                    Preencha corretamente com suas informações!
-                </Text>
-                <KeyboardAvoidingView>
+                <KeyboardAvoidingView style={styles.kav}>
                     <View style={styles.formRow}>
                         <Zocial name="email" style={styles.icon} />
                         <TextInput
@@ -75,8 +69,10 @@ export function Login({ navigation }: MenuStackTypes) {
                             onChangeText={(i) => handleChange({ password: i })}
                         />
                     </View>
-                    <ButtonInterface title='Voltar' type='primary' onPressI={handleGoBack} />
-                    <ButtonInterface title='Entrar' type='secondary' onPressI={handleRegister} />
+                    <View style={styles.bots}>
+                        <ButtonInterface title='Voltar' type='primary' onPressI={handleGoBack} />
+                        <ButtonInterface title='Entrar' type='secondary' onPressI={handleRegister} />
+                    </View>
                 </KeyboardAvoidingView>
                 <View style={styles.txt}>
                     <Text style={styles.log}>Não tem uma conta?</Text>

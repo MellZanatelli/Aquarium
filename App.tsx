@@ -5,11 +5,14 @@ import { Tela3 } from './src/screens/Tela3'
 import { Tela4 } from './src/screens/Tela4'
 import { Dispatch, SetStateAction, useState } from 'react'
 import { Navigations } from './src/navigation';
+
 import {
   useFonts,
   TheNautigal_400Regular,
   TheNautigal_700Bold,
 } from '@expo-google-fonts/the-nautigal';
+
+import { StatusBar } from 'expo-status-bar';
 
 export interface Page {
   setPagina: Dispatch<SetStateAction<number>>
@@ -38,10 +41,16 @@ export default function App() {
     case 3:
       return <Tela3 setPagina={setPage} />
       break
+    // case 4:
+    // return <Tela4 setPagina={setPage} />
+    // break
   }
 
   return (
-    <Navigations />
+    <>
+      <Navigations />
+      <StatusBar style='auto' />
+    </>
   );
 
 }

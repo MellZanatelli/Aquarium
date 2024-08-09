@@ -3,51 +3,48 @@ import {colors} from '../../styles/globalstyle'
 
 export const styles = StyleSheet.create({   
     header: {
-        padding: 40,
-    },
-    titulo: {
-        height: 45,
-        width: 'auto',
-    },
-    h3: {
-        color: colors.white,
-        fontSize: 45,
         padding: 20,
-        textAlign: 'center',
-    },
-    img: {
-        padding: 10,
-    },
-    botao: {
-        padding: 5,
-        backgroundColor: colors.white,
+        display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    gotas: {
+        padding: 30,
+        height: 80,
+        width: 'auto',
+    },
+    bemv: {
+        fontFamily: 'TheNautigal_700Bold',
+        color: colors.white,
+        fontSize: 70,
+        paddingHorizontal: 10,
+        textAlign: 'center',
+    },
+    formRow:{
+        display: 'flex',
         flexDirection: 'row',
-        borderRadius: 20,
-    },
-    title: {
-        fontSize: 30,
-        fontWeight: "bold",
-        textAlign: "center",
-        color: colors.roxo
-    },
-    formRow: {
-        margin: 10,
-        flexDirection: "row",
-        alignItems: "center",
-        borderWidth: 0.7,
-        borderColor: colors.roxo,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 10,
+        backgroundColor: colors.white,
         borderRadius: 5,
+        opacity: 0.8,
+        padding: 10,
     },
     icon: {
-
-    },
-    entrar: {
-        backgroundColor: 'none',
+        fontSize: 30,
+        color: colors.roxo,
+        paddingHorizontal: 8,
     },
     input: {
-
+        width: 250,
+    },
+    firula: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignContent: 'center',
+        alignItems: 'center',
     },
     txt: {
         padding: 20,
@@ -64,5 +61,21 @@ export const styles = StyleSheet.create({
     log: {
         fontSize: 20,
         color: colors.white,
+    },
+    entrar: {
+        backgroundColor: 'none',
+    },
+    bots: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    kav: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        height: '50%'
     }
 })

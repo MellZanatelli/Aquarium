@@ -79,7 +79,7 @@ export function Cadastrar({ navigation }: MenuStackTypes) {
                     </View>
                     <View style={styles.bots}>
                         <ButtonInterface title='Voltar' type='primary' onPressI={handleGoBack} />
-                        <ButtonInterface title='Entrar' type='secondary' onPressI={handleRegister} />
+                        <ButtonInterface title='Cadastrar' type='secondary' onPressI={handleRegister} />
                     </View>
                 </KeyboardAvoidingView>
                 <View style={styles.txt}>
