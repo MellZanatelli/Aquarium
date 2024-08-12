@@ -17,18 +17,17 @@ export interface IResponseUser {
 export interface IAuthenticated {
     user: IResponseUser
     token: {
-        token: {
-            token: string
-            expires_at: string
-        }
+        token: string
+        expires_at: string
     }
+
 }
 
 class UserData {
-    register(data: IUser){
+    register(data: IUser) {
         return api.post<IResponseUser>('/cadastrar', data)
     }
-    login(data: IUser){
+    login(data: IUser) {
         return api.post<IAuthenticated>('/login', data)
     }
 }

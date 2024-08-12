@@ -6,6 +6,8 @@ import { styles } from "./styles";
 import { Scontainer, colors } from '../../styles/globalstyle';
 import { MenuStackTypes } from "../../navigation/Login.navigation";
 import { ButtonInterface } from '../../components/ButtonInterface';
+import { useAuth } from '../../hook/auth';
+import { AxiosError } from 'axios';
 
 export interface IAutenticar {
     email?: string;
@@ -14,18 +16,23 @@ export interface IAutenticar {
 
 export function Login({ navigation }: MenuStackTypes) {
 
-    const [data, setData] = useState<IAutenticar>(); //Preenche dados
+    const [data, setData] = useState<IAutenticar>(); //Preenche dado
+    const { signIn, setLoading } = useAuth()
 
     async function handleSignIn() {
         if (data?.email && data.password) {
-            console.log(data)
+            setLoading(true)
+            try {
+                await signIn(data)
+            } catch (error) {
+                const err = error as AxiosError
+                const msg = err.response?.data as string
+                Alert.alert(msg)
+            }
+            setLoading(false)
         } else {
             Alert.alert("Preencha todos os campos!");
         }
-    }
-
-    function handleRegister() {
-        navigation.navigate("Cadastrar")
     }
 
     function handleChange(item: IAutenticar) {
@@ -71,7 +78,7 @@ export function Login({ navigation }: MenuStackTypes) {
                     </View>
                     <View style={styles.bots}>
                         <ButtonInterface title='Voltar' type='primary' onPressI={handleGoBack} />
-                        <ButtonInterface title='Entrar' type='secondary' onPressI={handleRegister} />
+                        <ButtonInterface title='Entrar' type='secondary' onPressI={handleSignIn} />
                     </View>
                 </KeyboardAvoidingView>
                 <View style={styles.txt}>

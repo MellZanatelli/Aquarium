@@ -6,6 +6,9 @@ import { styles } from "./styles";
 import { Scontainer, colors } from '../../styles/globalstyle';
 import { MenuStackTypes } from "../../navigation/Login.navigation";
 import { ButtonInterface } from '../../components/ButtonInterface';
+import { apiUser } from '../../services/data';
+import { AxiosError } from 'axios';
+import { useAuth } from '../../hook/auth';
 
 export interface IRegister {
     name?: string
@@ -15,9 +18,18 @@ export interface IRegister {
 
 export function Cadastrar({ navigation }: MenuStackTypes) {
     const [data, setData] = useState<IRegister>(); //Preenche dados
+    const { setLoading } = useAuth()
+
     async function handleRegister() {
         if (data?.email && data.name && data.password) { // poupa o if data para saber se tá preenchido
-            console.log(data)
+            setLoading(true)
+            try { 
+                const response = await apiUser.register(data)
+                Alert.alert(`Usuário ${response.data.name} foi cadastrado com sucesso!`)
+                navigation.navigate("Login")
+            } catch (error) {
+                const err = error as AxiosError
+            }
         } else {
             Alert.alert("Preencha todos os campos antes de continuar.")
         }
