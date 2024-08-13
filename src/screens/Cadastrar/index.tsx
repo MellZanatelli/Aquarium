@@ -29,6 +29,8 @@ export function Cadastrar({ navigation }: MenuStackTypes) {
                 navigation.navigate("Login")
             } catch (error) {
                 const err = error as AxiosError
+                const msg = err.response?.data as string
+                Alert.alert(msg)
             }
         } else {
             Alert.alert("Preencha todos os campos antes de continuar.")
