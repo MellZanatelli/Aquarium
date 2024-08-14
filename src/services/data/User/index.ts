@@ -24,8 +24,8 @@ export interface IAuthenticated {
 }
 
 class UserData {
-    register(data: IUser) {
-        return api.post<IResponseUser>('/cadastrar', data)
+    cadastrar(data: IUser) {
+        return api.post<IResponseUser>('/register', data)
     }
     login(data: IUser) {
         return api.post<IAuthenticated>('/login', data)

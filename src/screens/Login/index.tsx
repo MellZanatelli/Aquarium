@@ -83,7 +83,7 @@ export function Login({ navigation }: MenuStackTypes) {
                 </KeyboardAvoidingView>
                 <View style={styles.txt}>
                     <Text style={styles.log}>Não tem uma conta?</Text>
-                    <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.push("Login")} style={styles.entrar}>
+                    <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.push("Cadastrar")} style={styles.entrar}>
                         <Text style={styles.sub}>Clique aqui para se cadastrar </Text>
                     </TouchableOpacity>
                 </View>

@@ -17,14 +17,14 @@ export interface IRegister {
 }
 
 export function Cadastrar({ navigation }: MenuStackTypes) {
-    const [data, setData] = useState<IRegister>(); //Preenche dados
+    const [data, setData] = useState<IRegister>(); // Preenche dados
     const { setLoading } = useAuth()
 
     async function handleRegister() {
         if (data?.email && data.name && data.password) { // poupa o if data para saber se tá preenchido
             setLoading(true)
             try { 
-                const response = await apiUser.register(data)
+                const response = await apiUser.cadastrar(data)
                 Alert.alert(`Usuário ${response.data.name} foi cadastrado com sucesso!`)
                 navigation.navigate("Login")
             } catch (error) {
@@ -32,6 +32,7 @@ export function Cadastrar({ navigation }: MenuStackTypes) {
                 const msg = err.response?.data as string
                 Alert.alert(msg)
             }
+            setLoading(false)
         } else {
             Alert.alert("Preencha todos os campos antes de continuar.")
         }

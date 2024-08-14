@@ -1,6 +1,6 @@
 import { createBottomTabNavigator, BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 import { Perfil, Mensagem } from '../screens';
-import { Entypo, Feather } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 import { colors } from '../styles/globalstyle';
 import { FontAwesome } from '@expo/vector-icons';
 
@@ -30,16 +30,16 @@ export function MenuTabs() {
             <Tab.Screen name="Per" component = {Perfil}
                 options={{
                     tabBarIcon: () => (
-                        <FontAwesome name="user-circle"  />
-                    )
+                        <FontAwesome name="user-circle" size={24} color={colors.roxo}/>
+                    ),
                 }}
             />
 
             <Tab.Screen name="Msg" component={Mensagem}
                 options={{
                     tabBarIcon: () => (
-                        <Feather name='sliders' size={24} color='black' />
-                    )
+                        <Feather name='sliders' size={24} color={colors.roxo} />
+                    ),
                 }}    
             />
         </Tab.Navigator>

@@ -9,7 +9,7 @@ import { Pontinhos } from '../../components/pontinhos'
 import { Pontos } from '../../styles/globalstyle'
 import { Page } from '../../../App'
 
-export function Tela4({ navigation }: MenuStackTypes, { setPagina }: Page) {
+export function Tela4({navigation}: MenuStackTypes,{ setPagina }: Page) {
 
     const bolhas = require('../../assets/bolhas.png')
 
