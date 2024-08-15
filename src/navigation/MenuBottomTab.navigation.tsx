@@ -3,6 +3,7 @@ import { Perfil, Mensagem } from '../screens';
 import { Feather } from '@expo/vector-icons';
 import { colors } from '../styles/globalstyle';
 import { FontAwesome } from '@expo/vector-icons';
+import { Message}
 
 type MenuTabParam = {
     Per: undefined
