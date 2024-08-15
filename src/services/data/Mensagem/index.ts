@@ -1,8 +1,8 @@
 import { api } from "../../api"
 
 export interface IMensagem {
-    title: string
-    mensagem: string
+    title?: string
+    mensagem?: string
 }
 
 export interface IResponseMensagem {
@@ -11,6 +11,11 @@ export interface IResponseMensagem {
     title: string
     mensagem: string
     created_at: string
+    user: {
+        id: number
+        name: string
+        email: string
+    }
 }
 
 class MensagemData {
@@ -18,7 +23,7 @@ class MensagemData {
         return api.get<IResponseMensagem[]>('/message')
     }
     store(data: IMensagem) {
-        return api.post('/mensagem', data)
+        return api.post('/message', data)
     }
 }
 

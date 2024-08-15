@@ -6,7 +6,7 @@ type MessageStackParamList = {
     CadMsg: undefined
 }
 type MessageScreenNavigationProp = StackNavigationProp<MessageStackParamList, 'Msg'>
-export type MessageTypes = {
+export type MensagemTypes = {
     navigation: MessageScreenNavigationProp
 }
 export function MessageNavigation() {

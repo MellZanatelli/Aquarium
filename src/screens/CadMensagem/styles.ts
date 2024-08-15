@@ -21,4 +21,17 @@ export const styles = StyleSheet.create({
         padding: 10,
         width: '70%'
     },
+    bots: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    kav: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        height: '50%'
+    }
 })

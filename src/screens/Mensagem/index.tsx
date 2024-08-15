@@ -6,11 +6,15 @@ import { IResponseMensagem } from "../../services/data/Mensagem";
 import { useAuth } from "../../hook/auth";
 import { apiMensagem } from "../../services/data";
 import { FlatList } from "react-native-gesture-handler";
+import { MensagemTypes } from "../../navigation/Mensagem.navigation";
+import { ButtonInterface } from "../../components/ButtonInterface";
 
-export function Mensagem() {
+export function Mensagem({ navigation }: MensagemTypes) {
 
     const [mensagem, setMensagem] = useState<IResponseMensagem[]>([])
+
     const { setLoading } = useAuth()
+
     useEffect(() => {
         setLoading(true)
         async function loadMensagem() {
@@ -18,7 +22,7 @@ export function Mensagem() {
             setMensagem(response.data)
         }
         setLoading(false)
-        loadMensagem()
+        navigation.addListener("focus", () => loadMensagem())
     }, [])
 
     interface itemMensagem {
@@ -28,8 +32,9 @@ export function Mensagem() {
     const renderItem = (({ item }: itemMensagem) => {
         return (
             <View style={styles.item}>
+                <Text style={styles.itemText}>Nome:{" "}{item.user.name}</Text>
                 <Text style={styles.itemText}>Título:{" "}{item.title}</Text>
-                <Text style={styles.itemText}>Título:{" "}{item.mensagem}</Text>
+                <Text style={styles.itemText}>Mensagem:{" "}{item.mensagem}</Text>
             </View>
         )
     })
@@ -45,6 +50,8 @@ export function Mensagem() {
                     />
                 )
             }
+            <ButtonInterface title='Escrever' type='secondary'
+                onPressI={() => navigation.navigate('CadMsg')} />
         </View>
     )
 }

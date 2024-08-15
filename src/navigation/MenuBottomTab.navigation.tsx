@@ -3,7 +3,7 @@ import { Perfil, Mensagem } from '../screens';
 import { Feather } from '@expo/vector-icons';
 import { colors } from '../styles/globalstyle';
 import { FontAwesome } from '@expo/vector-icons';
-import { Message}
+import { MessageNavigation } from './Mensagem.navigation';
 
 type MenuTabParam = {
     Per: undefined
@@ -36,7 +36,7 @@ export function MenuTabs() {
                 }}
             />
 
-            <Tab.Screen name="Msg" component={Mensagem}
+            <Tab.Screen name="Msg" component={MessageNavigation}
                 options={{
                     tabBarIcon: () => (
                         <Feather name='sliders' size={24} color={colors.roxo} />
