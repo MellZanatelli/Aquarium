@@ -1,10 +1,12 @@
 import { DrawerNavigationProp, createDrawerNavigator} from '@react-navigation/drawer'
 import { colors } from '../styles/globalstyle';
 import { MenuTabs } from './MenuBottomTab.navigation';
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome, Ionicons} from '@expo/vector-icons';
+import { Camera } from '../screens/Camera';
 
 type DrawerParamList = {
     Tab: undefined
+    Camera: undefined
 }
 
 type DrawerScreenNavigationProp = DrawerNavigationProp<DrawerParamList, 'Tab'>
@@ -32,6 +34,12 @@ export function MenuDrawer() {
                 headerTitle: 'Perfil',
                 drawerIcon: () => (
                     <FontAwesome name="user-circle" size={24} color={colors.roxo}/>
+                ),
+            }}/>
+            <Drawer.Screen name='Camera' component={Camera}
+            options={{
+                drawerIcon: () => (
+                    <Ionicons name="camera" size={24} color={colors.roxo}/>
                 ),
             }}/>
         </Drawer.Navigator>

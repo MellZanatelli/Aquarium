@@ -39,9 +39,9 @@ export function Login({ navigation }: MenuStackTypes) {
         setData({ ...data, ...item });
     }
 
-    function handleGoBack() {
-        navigation.navigate('TelaInicial')
-    }
+    // function handleGoBack() {
+    //     navigation.navigate('TelaInicial')
+    // }
 
     return (
         <FundoLog>
@@ -77,7 +77,7 @@ export function Login({ navigation }: MenuStackTypes) {
                         />
                     </View>
                     <View style={styles.bots}>
-                        <ButtonInterface title='Voltar' type='primary' onPressI={handleGoBack} />
+                        {/* <ButtonInterface title='Voltar' type='primary' onPressI={handleGoBack} /> */}
                         <ButtonInterface title='Entrar' type='secondary' onPressI={handleSignIn} />
                     </View>
                 </KeyboardAvoidingView>

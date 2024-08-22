@@ -43,18 +43,20 @@ export default function App() {
     case 3:
       return <Tela3 setPagina={setPage} />
       break
-    //case 4:
-    //  return <Tela4 setPagina={setPage} />
-    //  break
+    case 4:
+      return <Tela4 setPagina={setPage} />
+      break
+    default:
+      return (
+        <>
+          <AuthProvider>
+            <Navigations />
+          </AuthProvider>
+          <StatusBar style='auto' />
+        </>
+      );
   }
 
-  return (
-    <>
-      <AuthProvider>
-        <Navigations />
-      </AuthProvider>
-      <StatusBar style='auto' />
-    </>
-  );
+
 
 }

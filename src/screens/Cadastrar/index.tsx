@@ -23,14 +23,15 @@ export function Cadastrar({ navigation }: MenuStackTypes) {
     async function handleRegister() {
         if (data?.email && data.name && data.password) { // poupa o if data para saber se tá preenchido
             setLoading(true)
-            try { 
+            try {
+                console.log(data)
                 const response = await apiUser.cadastrar(data)
                 Alert.alert(`Usuário ${response.data.name} foi cadastrado com sucesso!`)
                 navigation.navigate("Login")
             } catch (error) {
                 const err = error as AxiosError
-                const msg = err.response?.data as string
-                Alert.alert(msg)
+                console.log(err.response?.data)
+                // Alert.alert(msg)
             }
             setLoading(false)
         } else {
@@ -38,7 +39,7 @@ export function Cadastrar({ navigation }: MenuStackTypes) {
         }
     }
     function handleGoBack() {
-        navigation.navigate('TelaInicial')
+        navigation.navigate('Login')
     }
     function handleChange(item: IRegister) {
         setData({ ...data, ...item });

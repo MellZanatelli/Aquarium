@@ -35,6 +35,7 @@ export const styles = StyleSheet.create({
         borderRadius: 5,
         opacity: 0.8,
         padding: 10,
+        marginTop: 10,
     },
     icon: {
         fontSize: 30,
@@ -85,7 +86,6 @@ export const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'space-around',
-        height: '40%'
+        justifyContent: 'space-around'
     }
 })

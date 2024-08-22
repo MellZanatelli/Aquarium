@@ -3,13 +3,11 @@ import { View, Text, Button, TouchableOpacity, Image, Linking } from "react-nati
 import { styles } from "./styles"
 import { Fundo } from '../../components/fundo'
 import { Scontainer } from '../../styles/globalstyle'
-import { Cadastrar } from "../Cadastrar"
-import { MenuStackTypes } from "../../navigation/Login.navigation"
 import { Pontinhos } from '../../components/pontinhos'
 import { Pontos } from '../../styles/globalstyle'
 import { Page } from '../../../App'
 
-export function Tela4({navigation}: MenuStackTypes,{ setPagina }: Page) {
+export function Tela4({ setPagina }: Page) {
 
     const bolhas = require('../../assets/bolhas.png')
 
@@ -21,13 +19,13 @@ export function Tela4({navigation}: MenuStackTypes,{ setPagina }: Page) {
                         Tenha seu próprio mundinho dentro d’água, para amar e relaxar!
                     </Text>
                 </View>
-                <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.push("Cadastrar")} style={styles.bot}>
+                <TouchableOpacity activeOpacity={0.7} onPress={() => setPagina(5)} style={styles.bot}>
                     <Text style={styles.com}>Começar </Text>
                     <Image style={styles.img} source={require('../../assets/seta.png')} />
                 </TouchableOpacity>
                 <View style={styles.txt}>
                     <Text style={styles.log}>Já tem uma conta?</Text>
-                    <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.push("Login")} style={styles.entrar}>
+                    <TouchableOpacity activeOpacity={0.7} onPress={() => setPagina(6)} style={styles.entrar}>
                         <Text style={styles.sub}>Clique aqui para entrar </Text>
                     </TouchableOpacity>
                 </View>

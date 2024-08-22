@@ -1,13 +1,12 @@
 import { StackNavigationProp, createStackNavigator } from "@react-navigation/stack";
-import { Login, Cadastrar, Tela4 } from '../screens';
+import { Login, Cadastrar } from '../screens';
 
 type MenuStackParam = {
-    TelaInicial: undefined
     Login: undefined
     Cadastrar: undefined
 }
 
-type MenuScreenNavigation = StackNavigationProp<MenuStackParam, "TelaInicial">
+type MenuScreenNavigation = StackNavigationProp<MenuStackParam, "Login">
 
 export type MenuStackTypes = {
     navigation: MenuScreenNavigation
@@ -21,7 +20,6 @@ export function MenuStackLogin(){
             gestureEnabled: true,
             headerShown: false
         }}>
-            <Stack.Screen name = 'TelaInicial' component = {Tela4} />
             <Stack.Screen name = 'Login' component = {Login} />
             <Stack.Screen name = 'Cadastrar' component = {Cadastrar} />
         </Stack.Navigator>

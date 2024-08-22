@@ -25,7 +25,7 @@ export function CadMensagem({ navigation }: MensagemTypes) {
             try {
                 await apiMensagem.store(data)
                 Alert.alert('Mensagem cadastrada com sucesso.')
-                navigation.navigate('Msg')
+                navigation.navigate('Mensagem')
             } catch (error) {
                 const err = error as AxiosError
                 const msg = err.response?.data as string
@@ -64,7 +64,7 @@ export function CadMensagem({ navigation }: MensagemTypes) {
                         onPressI={handleCadMensage}
                     />
                     <ButtonInterface title='Voltar' type='secondary'
-                        onPressI={() => navigation.navigate('Msg')}
+                        onPressI={() => navigation.navigate('Mensagem')}
                     />
                 </View>
             </KeyboardAvoidingView>
