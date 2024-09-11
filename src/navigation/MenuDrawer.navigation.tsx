@@ -3,10 +3,12 @@ import { colors } from '../styles/globalstyle';
 import { MenuTabs } from './MenuBottomTab.navigation';
 import { FontAwesome, Ionicons} from '@expo/vector-icons';
 import { Camera } from '../screens/Camera';
+import { Imagens } from '../screens/Imagens';
 
 type DrawerParamList = {
     Tab: undefined
     Camera: undefined
+    Imagem: undefined
 }
 
 type DrawerScreenNavigationProp = DrawerNavigationProp<DrawerParamList, 'Tab'>
@@ -42,6 +44,12 @@ export function MenuDrawer() {
                     <Ionicons name="camera" size={24} color={colors.roxo}/>
                 ),
             }}/>
+            <Drawer.Screen name='Imagem' component={Imagens} 
+            options={{
+                drawerIcon: ()=> (
+                    <FontAwesome name="picture-o" size={24} color={colors.white} />
+                ),
+            }} />
         </Drawer.Navigator>
     )
 }
