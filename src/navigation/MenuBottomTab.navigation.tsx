@@ -6,11 +6,11 @@ import { FontAwesome } from '@expo/vector-icons';
 import { MessageNavigation } from './Mensagem.navigation';
 
 type MenuTabParam = {
-    Per: undefined
-    Msg: undefined
+    Perfil: undefined
+    Mensagem: undefined
 }
 
-type MenuScreenNavigation = BottomTabNavigationProp<MenuTabParam, "Per">
+type MenuScreenNavigation = BottomTabNavigationProp<MenuTabParam, "Perfil">
 
 export type MenuTabTypes = {
     navigation: MenuScreenNavigation
@@ -28,18 +28,18 @@ export function MenuTabs() {
             tabBarInactiveBackgroundColor: colors.roxo,
             tabBarInactiveTintColor: colors.white,
         }}>
-            <Tab.Screen name="Per" component = {Perfil}
+            <Tab.Screen name="Perfil" component = {Perfil}
                 options={{
                     tabBarIcon: () => (
-                        <FontAwesome name="user-circle" size={24} color={colors.roxo}/>
+                        <FontAwesome name="user-circle" size={24} color={colors.white}/>
                     ),
                 }}
             />
 
-            <Tab.Screen name="Msg" component={MessageNavigation}
+            <Tab.Screen name="Mensagem" component={MessageNavigation}
                 options={{
                     tabBarIcon: () => (
-                        <Feather name='sliders' size={24} color={colors.roxo} />
+                        <Feather name='sliders' size={24} color={colors.white} />
                     ),
                 }}    
             />

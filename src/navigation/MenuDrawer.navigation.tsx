@@ -35,13 +35,13 @@ export function MenuDrawer() {
                 drawerLabel: 'Perfil',
                 headerTitle: 'Perfil',
                 drawerIcon: () => (
-                    <FontAwesome name="user-circle" size={24} color={colors.roxo}/>
+                    <FontAwesome name="user-circle" size={24} color={colors.white}/>
                 ),
             }}/>
             <Drawer.Screen name='Camera' component={Camera}
             options={{
                 drawerIcon: () => (
-                    <Ionicons name="camera" size={24} color={colors.roxo}/>
+                    <Ionicons name="camera" size={24} color={colors.white}/>
                 ),
             }}/>
             <Drawer.Screen name='Imagem' component={Imagens} 
